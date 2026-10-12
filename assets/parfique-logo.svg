@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Parfique logo</title>
+  <desc id="desc">A gold PF monogram inside a brown circle with Parfique underneath</desc>
+  <circle cx="120" cy="120" r="108" fill="#f8f5f1" stroke="#5a3b2a" stroke-width="8"/>
+  <circle cx="120" cy="120" r="99" fill="none" stroke="#ae7d2e" stroke-width="2"/>
+  <g fill="#ae7d2e" stroke="#5a3b2a" stroke-width="2" paint-order="stroke">
+    <text x="82" y="125" font-family="Georgia, serif" font-size="105" font-weight="600">P</text>
+    <text x="116" y="174" font-family="Georgia, serif" font-size="105" font-weight="600">F</text>
+  </g>
+  <text x="120" y="193" fill="#ae7d2e" font-family="Georgia, serif" font-size="22" font-weight="600" letter-spacing="1" text-anchor="middle">PARFIQUE</text>
+</svg>

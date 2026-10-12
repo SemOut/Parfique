@@ -11,39 +11,65 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--cream); color: var(--ink); margin: 0; }
+body { background: var(--cream); background-image: radial-gradient(rgba(90, 59, 42, .08) .7px, transparent .7px); background-size: 9px 9px; color: var(--ink); margin: 0; }
 a { color: inherit; text-decoration: none; }
-.site-header { align-items: center; background: rgba(248, 245, 241, .72); border-bottom: 1px solid var(--frame); display: flex; height: 67px; padding-left: 8px; }
-.logo { align-items: center; border: 2px solid var(--brown); border-radius: 50%; display: inline-flex; flex-direction: column; height: 58px; justify-content: center; position: relative; width: 58px; }
+.site-header { align-items: center; background: rgba(248, 245, 241, .88); border-bottom: 1px solid var(--frame); display: flex; height: 67px; justify-content: space-between; padding: 0 3.1vw 0 8px; position: sticky; top: 0; z-index: 10; }
+.logo { align-items: center; border: 2px solid var(--brown); border-radius: 50%; display: inline-flex; flex: 0 0 58px; flex-direction: column; height: 58px; justify-content: center; overflow: hidden; position: relative; width: 58px; }
 .logo::before { border: 1px solid var(--gold); border-radius: 50%; content: ''; inset: 3px; position: absolute; }
-.logo span { color: var(--gold); font-family: var(--serif); font-size: 2.2rem; font-weight: 600; letter-spacing: -.2em; line-height: .68; margin-left: -.18em; position: relative; z-index: 1; }
+.logo span { color: var(--gold); font-family: var(--serif); font-size: 2.2rem; font-weight: 600; letter-spacing: -.3em; line-height: .68; margin-left: -.28em; position: relative; z-index: 1; }
 .logo small { color: var(--brown); font-family: var(--serif); font-size: .42rem; letter-spacing: .04em; margin-top: 5px; position: relative; z-index: 1; }
-.catalogue { display: grid; gap: 3.1vw; grid-template-columns: minmax(410px, .95fr) minmax(540px, 1.25fr); max-width: 1190px; padding: 32px 3.1vw 52px; }
+.logo img { display: block; height: 100%; object-fit: contain; width: 100%; }
+.site-nav { display: flex; gap: 28px; font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
+.site-nav a { border-bottom: 1px solid transparent; padding-bottom: 4px; }
+.site-nav a:hover, .site-nav a:focus-visible { border-color: var(--brown); color: var(--brown); }
+.catalogue { display: grid; gap: 4vw; grid-template-columns: minmax(410px, .95fr) minmax(540px, 1.25fr); margin: 0 auto; max-width: 1280px; padding: 42px 3.1vw 65px; }
 .about { padding-top: 0; }
-.logo-large { background: white; border: 0; border-radius: 0; height: 180px; margin: 0 auto 25px; width: 190px; }
+.logo-large { background: transparent; border: 0; border-radius: 0; flex-basis: auto; height: 180px; margin: 0 auto 25px; width: 190px; }
 .logo-large::before { border-width: 3px; inset: 20px; }
 .logo-large span { font-size: 5.5rem; }
 .logo-large small { font-size: .8rem; margin-top: 10px; }
 .about-copy h1 { font-family: var(--serif); font-size: 1.22rem; font-weight: 600; letter-spacing: .03em; margin: 0 0 2px 1.2rem; }
-.about-copy p { font-family: var(--serif); font-size: 1.03rem; line-height: 1.15; margin: 0 0 47px; }
-.products { display: grid; gap: 4px 30px; grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+.about-copy p { font-family: var(--serif); font-size: 1.03rem; line-height: 1.28; margin: 0 0 40px; }
+.products { display: grid; gap: 28px 30px; grid-template-columns: repeat(2, minmax(220px, 1fr)); }
 .product-card { min-width: 0; text-align: center; }
-.product-frame { background: var(--paper); border: 10px solid var(--frame); height: 277px; overflow: hidden; position: relative; }
+.product-frame { background: linear-gradient(135deg, #fbfaf8, #ede7df); border: 9px solid var(--frame); box-shadow: 0 8px 0 rgba(90, 59, 42, .04), 0 18px 30px rgba(90, 59, 42, .07); height: 292px; overflow: hidden; position: relative; transition: border-color .2s ease, box-shadow .2s ease; }
 .product-frame::after { border: 1px solid rgba(98, 76, 54, .25); content: ''; inset: 8px; pointer-events: none; position: absolute; }
-.pouch { clip-path: polygon(14% 17%, 25% 8%, 75% 8%, 86% 17%, 94% 92%, 6% 92%); height: 240px; margin: 19px auto 0; overflow: hidden; position: relative; transform: rotate(-2deg); width: 172px; }
+.product-badge { background: var(--brown); color: var(--cream); font-family: var(--mono); font-size: .52rem; left: 12px; letter-spacing: .06em; padding: 6px 8px; position: absolute; text-transform: uppercase; top: 12px; z-index: 2; }
+.pouch { clip-path: polygon(14% 17%, 25% 8%, 75% 8%, 86% 17%, 94% 92%, 6% 92%); filter: drop-shadow(11px 13px 8px rgba(57, 41, 29, .18)); height: 250px; margin: 20px auto 0; overflow: hidden; position: relative; transform: rotate(-2deg); width: 180px; }
 .pouch::before { background: repeating-linear-gradient(90deg, rgba(255,255,255,.32) 0 3px, transparent 3px 7px); content: ''; inset: 0; mix-blend-mode: soft-light; opacity: .55; position: absolute; }
-.pouch::after { border-top: 4px solid rgba(38,28,22,.45); content: ''; left: 14%; position: absolute; right: 14%; top: 22px; }
+.pouch::after { border-top: 4px solid rgba(38,28,22,.45); box-shadow: 0 5px 0 rgba(245, 235, 219, .5); content: ''; left: 14%; position: absolute; right: 14%; top: 22px; }
 .pouch-panther { background-color: #8f755f; background-image: radial-gradient(ellipse at 20% 20%, #332922 0 8%, transparent 10%), radial-gradient(ellipse at 60% 70%, #3d2f27 0 9%, transparent 11%), radial-gradient(ellipse at 70% 25%, #d0aa8e 0 14%, transparent 17%), radial-gradient(ellipse at 35% 70%, #c6a58d 0 14%, transparent 17%); background-size: 75px 75px, 80px 85px, 72px 90px, 100px 86px; }
 .pouch-zebra { background-color: #dfd7c8; background-image: repeating-linear-gradient(108deg, transparent 0 16px, #282521 17px 28px, transparent 29px 47px), repeating-linear-gradient(72deg, transparent 0 26px, rgba(40,37,33,.85) 27px 37px, transparent 38px 62px); }
 .pouch-blue { background-color: #9b9d99; background-image: repeating-linear-gradient(155deg, transparent 0 18px, #5f6d72 19px 37px, transparent 38px 67px), repeating-linear-gradient(35deg, transparent 0 32px, #c2aaa0 33px 45px, transparent 46px 80px); }
 .pouch-brown { background-color: #998f82; background-image: repeating-linear-gradient(130deg, transparent 0 22px, #4f4a45 23px 50px, transparent 51px 69px), repeating-linear-gradient(40deg, transparent 0 37px, #c2aa91 38px 55px, transparent 56px 81px); }
-.pouch-logo { align-items: center; color: var(--gold); display: flex; flex-direction: column; font-family: var(--serif); font-size: 3.55rem; font-weight: 600; left: 50%; letter-spacing: -.2em; line-height: .7; position: absolute; text-shadow: 1px 1px 1px #4b321f; top: 43%; transform: translate(-50%, -50%); z-index: 1; }
-.pouch-logo small { color: var(--gold); font-size: .68rem; letter-spacing: .03em; margin-left: .12em; margin-top: 8px; white-space: nowrap; }
-.product-card h2 { font-family: var(--script); font-size: 1.3rem; font-weight: 400; line-height: 1; margin: 8px 0 0; }
-.rating { font-family: Georgia, serif; font-size: 1.28rem; letter-spacing: -2px; line-height: 1; }
-.price { font-family: var(--script); font-size: 1.5rem; line-height: .9; margin: 4px 0 0; }
+.pouch-logo { height: 92px; left: 50%; object-fit: contain; position: absolute; top: 48%; transform: translate(-50%, -50%); width: 92px; z-index: 1; }
+.product-card h2 { font-family: var(--script); font-size: 1.4rem; font-weight: 400; line-height: 1; margin: 11px 0 2px; }
+.rating { color: var(--brown); font-family: Georgia, serif; font-size: 1.28rem; letter-spacing: -2px; line-height: 1; }
+.price { color: var(--brown); font-family: var(--script); font-size: 1.6rem; line-height: .9; margin: 5px 0 0; }
+.card-action { border-bottom: 1px solid var(--brown); display: inline-block; font-family: var(--mono); font-size: .54rem; letter-spacing: .06em; margin-top: 7px; padding-bottom: 3px; text-transform: uppercase; }
 .product-link { display: block; transition: transform .2s ease; }
-.product-link:hover { transform: translateY(-3px); }
+.product-link:hover { transform: translateY(-5px); }
+.product-link:hover .product-frame { border-color: #a99272; box-shadow: 0 8px 0 rgba(90, 59, 42, .05), 0 22px 34px rgba(90, 59, 42, .12); }
 .site-footer { border-top: 1px solid var(--frame); display: flex; font-family: var(--mono); font-size: .65rem; justify-content: space-between; letter-spacing: .08em; margin: 0 3.1vw; padding: 18px 0 25px; text-transform: uppercase; }
-@media (max-width: 800px) { .catalogue { display: block; padding: 25px 6vw 45px; }.about { margin-bottom: 44px; }.about-copy p { font-size: 1rem; margin-bottom: 30px; }.products { gap: 28px 14px; }.product-frame { border-width: 7px; height: 220px; }.pouch { height: 190px; margin-top: 13px; width: 138px; }.pouch-logo { font-size: 2.8rem; }.pouch-logo small { font-size: .52rem; }.site-footer { align-items: flex-start; flex-direction: column; gap: 12px; margin: 0 6vw; } }
+.inner-page, .product-page { min-height: calc(100vh - 150px); padding: 90px 8vw 110px; }
+.page-kicker, .back-link { font-family: var(--mono); font-size: .62rem; letter-spacing: .09em; text-transform: uppercase; }
+.inner-page h1, .detail-copy h1 { font-family: var(--serif); font-size: clamp(4rem, 8vw, 8rem); font-weight: 500; letter-spacing: -.04em; line-height: .82; margin: 20px 0 70px; }
+.inner-page h1 em { font-weight: 500; }
+.story-grid { align-items: center; display: grid; gap: 9vw; grid-template-columns: minmax(190px, .7fr) 1fr; max-width: 900px; }
+.story-mark { margin: 0; }
+.story-copy { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; max-width: 530px; }
+.story-copy p { margin: 0 0 26px; }
+.page-link, .button-link { border-bottom: 1px solid var(--brown); display: inline-block; font-family: var(--mono); font-size: .65rem; letter-spacing: .07em; padding-bottom: 6px; text-transform: uppercase; }
+.product-page { padding-top: 45px; }
+.back-link { border-bottom: 1px solid var(--brown); padding-bottom: 5px; }
+.product-detail { align-items: center; display: grid; gap: 9vw; grid-template-columns: minmax(300px, 1fr) minmax(280px, .8fr); margin: 45px auto 0; max-width: 1000px; }
+.detail-frame { align-items: center; background: var(--paper); border: 12px solid var(--frame); display: flex; height: 480px; justify-content: center; overflow: hidden; position: relative; }
+.detail-frame .pouch { height: 390px; width: 275px; }
+.detail-frame .pouch-logo { height: 150px; width: 150px; }
+.detail-copy h1 { font-size: clamp(3.6rem, 6vw, 6rem); margin: 14px 0 18px; }
+.detail-price { font-family: var(--script); font-size: 2.2rem; margin: 10px 0 30px; }
+.detail-copy > p:not(.page-kicker):not(.detail-price) { font-family: var(--serif); font-size: 1.25rem; line-height: 1.25; margin-bottom: 35px; }
+.contact-box { border-left: 8px solid var(--frame); font-family: var(--serif); font-size: 1.5rem; line-height: 1.2; max-width: 630px; padding: 12px 0 12px 30px; }
+@media (max-width: 800px) { .inner-page, .product-page { min-height: auto; padding: 65px 6vw 80px; }.inner-page h1, .detail-copy h1 { font-size: clamp(3.6rem, 15vw, 6rem); margin-bottom: 55px; }.story-grid, .product-detail { display: block; }.story-mark { margin: 0 auto 55px; }.story-copy { font-size: 1.2rem; }.detail-frame { height: 370px; margin: 45px 0; }.detail-frame .pouch { height: 300px; width: 215px; }.detail-frame .pouch-logo { height: 120px; width: 120px; }.detail-copy h1 { margin-bottom: 18px; }.contact-box { font-size: 1.25rem; } }
+@media (max-width: 800px) { .site-header { padding-right: 6vw; }.site-nav { gap: 14px; font-size: .55rem; }.catalogue { display: block; padding: 25px 6vw 45px; }.about { margin-bottom: 44px; }.about-copy p { font-size: 1rem; margin-bottom: 30px; }.products { gap: 28px 14px; }.product-frame { border-width: 7px; height: 220px; }.pouch { height: 190px; margin-top: 13px; width: 138px; }.pouch-logo { font-size: 2.8rem; }.pouch-logo small { font-size: .52rem; }.site-footer { align-items: flex-start; flex-direction: column; gap: 12px; margin: 0 6vw; } }
 @media (max-width: 430px) { .products { grid-template-columns: 1fr; }.product-frame { height: 300px; }.pouch { height: 265px; width: 190px; }.pouch-logo { font-size: 4rem; } }

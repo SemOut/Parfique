@@ -8,6 +8,10 @@ Open `index.html` directly in a browser. No npm, build tool, server, or dependen
 
 ## Project structure
 
+- `assets/parfique-logo.svg` - reusable Parfique logo asset
 - `index.html` - page structure and content
+- `about.html` - the Parfique story
+- `product.html` - reusable product detail page
+- `contact.html` - contact page
 - `styles.css` - responsive visual system
-- `main.js` - product selection feedback
+- `main.js` - product selection and detail-page behavior
