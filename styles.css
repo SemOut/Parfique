@@ -14,20 +14,14 @@ html { scroll-behavior: smooth; }
 body { background: var(--cream); background-image: radial-gradient(rgba(90, 59, 42, .08) .7px, transparent .7px); background-size: 9px 9px; color: var(--ink); margin: 0; }
 a { color: inherit; text-decoration: none; }
 .site-header { align-items: center; background: rgba(248, 245, 241, .88); border-bottom: 1px solid var(--frame); display: flex; height: 67px; justify-content: space-between; padding: 0 3.1vw 0 8px; position: sticky; top: 0; z-index: 10; }
-.logo { align-items: center; border: 2px solid var(--brown); border-radius: 50%; display: inline-flex; flex: 0 0 58px; flex-direction: column; height: 58px; justify-content: center; overflow: hidden; position: relative; width: 58px; }
-.logo::before { border: 1px solid var(--gold); border-radius: 50%; content: ''; inset: 3px; position: absolute; }
-.logo span { color: var(--gold); font-family: var(--serif); font-size: 2.2rem; font-weight: 600; letter-spacing: -.3em; line-height: .68; margin-left: -.28em; position: relative; z-index: 1; }
-.logo small { color: var(--brown); font-family: var(--serif); font-size: .42rem; letter-spacing: .04em; margin-top: 5px; position: relative; z-index: 1; }
-.logo img { display: block; height: 100%; object-fit: contain; width: 100%; }
+.logo { display: inline-flex; flex: 0 0 58px; height: 58px; width: 58px; }
+.logo img { display: block; height: 100%; mix-blend-mode: multiply; object-fit: contain; width: 100%; }
 .site-nav { display: flex; gap: 28px; font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
 .site-nav a { border-bottom: 1px solid transparent; padding-bottom: 4px; }
 .site-nav a:hover, .site-nav a:focus-visible { border-color: var(--brown); color: var(--brown); }
 .catalogue { display: grid; gap: 4vw; grid-template-columns: minmax(410px, .95fr) minmax(540px, 1.25fr); margin: 0 auto; max-width: 1280px; padding: 42px 3.1vw 65px; }
 .about { padding-top: 0; }
-.logo-large { background: transparent; border: 0; border-radius: 0; flex-basis: auto; height: 180px; margin: 0 auto 25px; width: 190px; }
-.logo-large::before { border-width: 3px; inset: 20px; }
-.logo-large span { font-size: 5.5rem; }
-.logo-large small { font-size: .8rem; margin-top: 10px; }
+.logo-large { flex-basis: auto; height: 180px; margin: 0 auto 25px; width: 190px; }
 .about-copy h1 { font-family: var(--serif); font-size: 1.22rem; font-weight: 600; letter-spacing: .03em; margin: 0 0 2px 1.2rem; }
 .about-copy p { font-family: var(--serif); font-size: 1.03rem; line-height: 1.28; margin: 0 0 40px; }
 .products { display: grid; gap: 28px 30px; grid-template-columns: repeat(2, minmax(220px, 1fr)); }

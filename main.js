@@ -4,10 +4,10 @@ const productTitle = document.querySelector('#detail-title');
 const productImage = document.querySelector('#detail-product-image');
 
 const products = {
-  panter: { name: 'panter zakje', image: 'assets/Panter.jpg' },
-  zebra: { name: 'zebra zakje', image: 'assets/zebra.jpg' },
-  blauw: { name: 'blauw zakje', image: 'assets/blauw.jpg' },
-  bruin: { name: 'bruin zakje', image: 'assets/bruin.jpg' },
+  panter: { name: 'panter zakje', image: './assets/panter.jpg' },
+  zebra: { name: 'zebra zakje', image: './assets/zebra.jpg' },
+  blauw: { name: 'blauw zakje', image: './assets/blauw.jpg' },
+  bruin: { name: 'bruin zakje', image: './assets/bruin.jpg' },
 };
 
 const selectedProduct = products[new URLSearchParams(window.location.search).get('item')];
