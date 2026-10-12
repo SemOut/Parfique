@@ -1,20 +1,21 @@
 const productLinks = document.querySelectorAll('.product-link');
 const selectionMessage = document.querySelector('#selection-message');
 const productTitle = document.querySelector('#detail-title');
-const productPouch = document.querySelector('#detail-pouch');
+const productImage = document.querySelector('#detail-product-image');
 
 const products = {
-  panter: { name: 'panter zakje', className: 'pouch-panther' },
-  zebra: { name: 'zebra zakje', className: 'pouch-zebra' },
-  blauw: { name: 'blauw zakje', className: 'pouch-blue' },
-  bruin: { name: 'bruin zakje', className: 'pouch-brown' },
+  panter: { name: 'panter zakje', image: 'assets/Panter.jpg' },
+  zebra: { name: 'zebra zakje', image: 'assets/zebra.jpg' },
+  blauw: { name: 'blauw zakje', image: 'assets/blauw.jpg' },
+  bruin: { name: 'bruin zakje', image: 'assets/bruin.jpg' },
 };
 
 const selectedProduct = products[new URLSearchParams(window.location.search).get('item')];
 
-if (selectedProduct && productTitle && productPouch) {
+if (selectedProduct && productTitle && productImage) {
   productTitle.textContent = selectedProduct.name;
-  productPouch.className = `pouch ${selectedProduct.className}`;
+  productImage.src = selectedProduct.image;
+  productImage.alt = selectedProduct.name;
 }
 
 productLinks.forEach((productLink) => {
