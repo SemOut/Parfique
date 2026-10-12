@@ -1,35 +1,10 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
+const productLinks = document.querySelectorAll('.product-link');
+const selectionMessage = document.querySelector('#selection-message');
 
-menuToggle?.addEventListener('click', () => {
-  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!isOpen));
-  siteNav.classList.toggle('is-open', !isOpen);
-});
+productLinks.forEach((productLink) => {
+  productLink.addEventListener('click', () => {
+    const productName = productLink.dataset.product;
 
-document.querySelectorAll('.site-nav a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    siteNav.classList.remove('is-open');
+    selectionMessage.textContent = `${productName} geselecteerd · mail ons voor bestellen`;
   });
 });
-
-document.querySelectorAll('.filter-button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    document.querySelectorAll('.filter-button').forEach((item) => item.classList.toggle('is-active', item === button));
-    document.querySelectorAll('.product-card').forEach((card) => {
-      const matches = filter === 'all' || card.dataset.category.includes(filter);
-      card.hidden = !matches;
-    });
-  });
-});
-
-document.querySelector('#signup-form')?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const message = document.querySelector('#form-message');
-  message.textContent = 'You are on the list. See you soon.';
-  event.currentTarget.reset();
-});
-
-document.querySelector('#year').textContent = new Date().getFullYear();

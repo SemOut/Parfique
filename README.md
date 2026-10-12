@@ -10,4 +10,4 @@ Open `index.html` directly in a browser. No npm, build tool, server, or dependen
 
 - `index.html` - page structure and content
 - `styles.css` - responsive visual system
-- `main.js` - navigation, collection filters, and signup interaction
+- `main.js` - product selection feedback
